@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Виміри</title>
+</head>
+<body>
+<div>
+	<a href="{% url 'create_measurement' %}">Додати вимір</a>
+</div>
+ {% for measurement in measurements %}
+     <p>{{ measurement.value }} :: {{ measurement.description }}</p>
+ {% endfor %}
+</body>
+</html>

@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.conf.urls import url
+from djangoapp.views import MeasurementList, MeasurementCreate
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^$', MeasurementList.as_view(), name='measurement_list'),
+	url(r'^create/',MeasurementCreate.as_view(), name='create_measurement')
 ]
